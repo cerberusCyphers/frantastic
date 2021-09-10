@@ -70,10 +70,12 @@ a {
 	color: var(--color-white);
 }
 
-li:hover,
+li:hover {
+	transform: skewY(5deg) scale(115%);
+}
+
 a:hover {
 	color: var(--color-secondary);
-	transform: skewY(5deg) scale(115%);
 	border-bottom: 2px dotted var(--color-secondary);
 }
 
@@ -136,14 +138,13 @@ a:hover {
 	left: 2rem;
 	display: grid;
 	grid-gap: 6rem;
-	justify-items: last baseline;
+	justify-items: end;
 	list-style: none;
 	cursor: pointer;
 }
 
 .nav__list--link {
 	text-decoration: none;
-	text-orientation: upright;
 	transition: all 0.3s;
 }
 
