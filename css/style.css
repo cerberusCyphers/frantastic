@@ -15,21 +15,33 @@
 	--color-white: #f6ffff;
 	--color-black: #202020;
 	--color-black-faded: #202020a8;
+	--color-shadow: #00000034;
 
 	--color-grey-light: #9b9b9b;
 	--color-grey-dark: #4b4d4d;
 
 	/* spacing */
 	--pd-default: 2rem;
+	--card-gap: 10rem;
 
 	/* fonts */
 	--ffam-main: 'Fredericka the Great', cursive;
 	--ffam-accent: 'Amatic SC', cursive;
 	--fs-default: 10px;
+	--fs-nav: 3rem;
 	--fs-main: 3rem;
 	--fs-sm: 2rem;
-	--fs-h1: 6rem;
+	--fs-h1: 5rem;
 	--fs-h2: 4rem;
+
+	/* breakpoints */
+	--bp-xxl: 93.75em;
+	--bp-xl: 75em;
+	--bp-lg: 68.75em;
+	--bp-md: 56.25em;
+	--bp-sm: 37.5em;
+	--bp-xs: 31.25em;
+	--bp-xxs: 25em;
 }
 
 /* ------------------------ */
@@ -55,7 +67,7 @@ section {
 .container {
 	display: grid;
 	grid-template-columns: repeat(10, 10%);
-	grid-template-rows: 25rem 45rem 65rem 40rem 20rem;
+	grid-template-rows: 25rem repeat(3, 1fr) 20rem;
 	justify-content: center;
 }
 
@@ -71,12 +83,21 @@ a {
 }
 
 li:hover {
-	transform: skewY(5deg) scale(115%);
+	transform: skewY(-5deg) scale(115%);
+}
+
+i {
+	font-size: var(--fs-main);
+	color: var(--color-white);
 }
 
 a:hover {
 	color: var(--color-secondary);
 	border-bottom: 2px dotted var(--color-secondary);
+}
+
+i:hover {
+	color: var(--color-secondary);
 }
 
 /* ------------------------ */
@@ -99,17 +120,12 @@ a:hover {
 
 	display: grid;
 	grid-template-columns: 15vw 70vw 15vw;
-	justify-content: center;
+	justify-items: center;
+	align-content: center;
 }
 
 .header__text {
-	justify-self: center;
-	align-self: center;
-}
-
-.logo {
-	justify-self: end;
-	align-self: center;
+	font-size: var(--fs-h1);
 }
 
 .logo img {
@@ -124,27 +140,27 @@ a:hover {
 	grid-column: 1 / 2;
 	grid-row: 2 / -2;
 
-	/* display: flex;
-	justify-content: center; */
+	display: flex;
+	justify-content: center;
 
 	background-color: var(--color-primary-light);
 	color: var(--color-white);
-	font-size: var(--fs-main);
+	font-size: var(--fs-nav);
 }
 
 .nav__list {
 	position: fixed;
 	top: 30rem;
-	left: 2rem;
 	display: grid;
-	grid-gap: 6rem;
-	justify-items: end;
+	grid-gap: 12rem;
+	justify-items: center;
 	list-style: none;
 	cursor: pointer;
 }
 
 .nav__list--link {
 	text-decoration: none;
+	/* transform: rotate(45deg); */
 	transition: all 0.3s;
 }
 
@@ -157,7 +173,7 @@ a:hover {
 	grid-row: 2 / 3;
 
 	display: grid;
-	grid-template-columns: repeat(18, 8rem);
+	grid-template-columns: repeat(18, 1fr);
 	grid-template-rows: repeat(8, 4rem);
 	grid-gap: 1rem;
 }
@@ -179,7 +195,7 @@ a:hover {
 
 .section__collection img:hover {
 	transform: scale(105%);
-	box-shadow: 3px 3px 8px var(--color-black);
+	box-shadow: 0px 0px 6px 6px var(--color-shadow);
 }
 
 .section__gallery--img-1 {
@@ -232,29 +248,31 @@ a:hover {
 	grid-row: 3 / 4;
 
 	display: grid;
-	/* grid-template-columns: repeat(3, 1fr); */
+	grid-template-columns: 1fr;
 	grid-template-rows: 5rem 1fr;
 	justify-content: center;
 }
 
 .section__shop--heading {
 	grid-row: 1 / 2;
+	padding-left: var(--pd-default);
 }
 
 .section__shop--items {
-	grid-row: 2 / -1;
+	grid-row: 2 / 3;
 
-	display: flex;
-	justify-content: space-evenly;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: var(--card-gap);
+	justify-content: center;
 }
 
 .card {
-	height: 50rem;
-	width: 30rem;
+	height: 100%;
+	width: 100%;
 	border-radius: 10px;
 	padding: 1rem;
-	margin: 0 5rem 4rem 5rem;
-	box-shadow: 5px 8px 4px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 6px 6px var(--color-shadow);
 	font-family: var(--ffam-accent);
 	color: var(--color-white);
 	display: flex;
@@ -264,8 +282,8 @@ a:hover {
 	transition: all 0.2s;
 }
 .card:hover {
-	transform: scale(1.1);
-	box-shadow: 9px 12px 6px rgba(0, 0, 0, 0.15);
+	transform: scale(105%);
+	box-shadow: 0 0 9px 12px var(--color-shadow);
 	cursor: pointer;
 }
 .card__item--img {
@@ -283,12 +301,15 @@ a:hover {
 }
 .card__1 {
 	background-color: var(--color-secondary);
+	grid-column: 1 / 2;
 }
 .card__2 {
 	background-color: var(--color-primary);
+	grid-column: 2 / 3;
 }
 .card__3 {
 	background-color: var(--color-secondary);
+	grid-column: 3 / 4;
 }
 
 /* ------------------------ */
@@ -302,6 +323,10 @@ a:hover {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
+}
+.section__events--heading {
+	align-self: flex-start;
+	padding-left: var(--pd-default);
 }
 
 .section__events--img {

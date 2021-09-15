@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" type="image/x-icon" href="">
 	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/queries.css" />
+	<link rel="stylesheet" href="/css/icofont/icofont.min.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredericka+the+Great&display=swap"
@@ -17,10 +19,10 @@
 <body>
 	<div class="container">
 		<div class="nav">
-			<ul class="nav__list hidden">
-				<li class="nav__list--link"><a href="#section__collection">Collections</a></li>
-				<li class="nav__list--link"><a href="#section__shop">Shop</a></li>
-				<li class="nav__list--link"><a href="#section__events">Events</a></li>
+			<ul class="nav__list">
+				<li class="nav__list--link"><a href="#section__collection"><i class="icofont-library"></i></a></li>
+				<li class="nav__list--link"><a href="#section__shop"><i class="icofont-shopping-cart"></i></a></li>
+				<li class="nav__list--link"><a href="#section__events"><i class="icofont-calendar"></i></a></li>
 			</ul>
 		</div>
 		<div class="header">
@@ -38,7 +40,6 @@
 		<section class="section__collection" id="section__collection">
 			<h3 class="section__collection--heading heading-secondary">Autumn Collection</h3>
 			<p class="section__collection--text">Creator curated collection of seasonal pieces to spark your interest!</p>
-			<!-- <div class="section__collection--gallery"> -->
 			<img src="img/vermont.jpg" alt="cart image" class="section__gallery--img-1">
 			<img src="img/autumnCart.jpg" alt="cart image" class="section__gallery--img-2">
 			<img src="img/truck.jpg" alt="cart image" class="section__gallery--img-3">
@@ -49,7 +50,6 @@
 			<img src="img/goldBottle.jpg" alt="cart image" class="section__gallery--img-8">
 			<img src="img/gobble.jpg" alt="cart image" class="section__gallery--img-9">
 			<img src="img/heart.jpg" alt="cart image" class="section__gallery--img-10">
-			<!-- </div> -->
 		</section>
 
 		<section class="section__shop" id="section__shop">
@@ -78,6 +78,7 @@
 		</section>
 
 		<section class="section__events" id="section__events">
+			<h2 class="section__events--heading">Upcoming Events</h2>
 			<p class="section__events--text">Check back to see upcoming events! There are so many fun projects to try, so
 				don't miss
 				out. Hope to see you soon!
