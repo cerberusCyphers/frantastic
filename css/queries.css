@@ -153,4 +153,9 @@
 	:root {
 		--fs-h1: 1.75;
 	}
+
+	.section__events--img {
+		width: 30rem;
+		clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+	}
 }
