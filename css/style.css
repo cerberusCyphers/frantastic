@@ -198,7 +198,6 @@ i:hover {
 .section__collection img:hover {
 	transform: scale(105%);
 	box-shadow: 0px 0px 6px 6px var(--color-shadow);
-	object-fit: fill;
 }
 
 .section__gallery--img-1 {
